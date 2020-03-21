@@ -16,7 +16,11 @@ type itemsServiceInterface interface {
 
 type itemsService struct{}
 
-func (s *itemsService) Create(item items.Item) (*items.Item, *rest_errors.RestErr) {
+func (s *itemsService) Create(itemRequest items.Item) (*items.Item, *rest_errors.RestErr) {
+	return nil, nil
+
+	itemRequest.Save()
+
 	return nil, nil
 }
 
