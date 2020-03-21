@@ -3,19 +3,22 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:0c7c7bdaaf7fdd894389e045de21a702b74c4ce5eb8aa1eea8b488b9ea371e5e"
+  digest = "1:ee758a38e87d286ecae6035a14bdd5e9bfe7134d7fe2fd55c24011d46973672c"
   name = "github.com/IrinaVolosevich/bookstore_oauth-go"
   packages = ["oauth"]
   pruneopts = "UT"
-  revision = "bb645792b117251d1b9a23eb59c0c58758269fc6"
+  revision = "33d61c39ca96ba137b332d05eb5b7dd4cb12ddcb"
 
 [[projects]]
   branch = "master"
-  digest = "1:4644dd293a418c444e977c56ee1651258deadcb8720dd14844e324614286c528"
+  digest = "1:df65e6442377f3d845d6b997c15267279347e6ec3496f373c0c3867c40392684"
   name = "github.com/IrinaVolosevich/bookstore_utils-go"
-  packages = ["rest_errors"]
+  packages = [
+    "logger",
+    "rest_errors",
+  ]
   pruneopts = "UT"
-  revision = "36a4670b8c3f399e90458536561a33fb83d1509d"
+  revision = "86613d941559b6c5d2d41c76c63eb791d6c7c947"
 
 [[projects]]
   digest = "1:25ebe6496abb289ef977c081b2d49f56dd97c32db4ca083d37f95923909ced02"
@@ -102,11 +105,10 @@
   analyzer-version = 1
   input-imports = [
     "github.com/IrinaVolosevich/bookstore_oauth-go/oauth",
+    "github.com/IrinaVolosevich/bookstore_utils-go/logger",
     "github.com/IrinaVolosevich/bookstore_utils-go/rest_errors",
     "github.com/gorilla/mux",
     "github.com/olivere/elastic",
-    "go.uber.org/zap",
-    "go.uber.org/zap/zapcore",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
