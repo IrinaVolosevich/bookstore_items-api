@@ -2,6 +2,7 @@ package services
 
 import (
 	"bookstore_items-api/domain/items"
+	"bookstore_items-api/domain/queries"
 	"github.com/IrinaVolosevich/bookstore_utils-go/rest_errors"
 )
 
@@ -12,6 +13,7 @@ var (
 type itemsServiceInterface interface {
 	Create(items.Item) (*items.Item, rest_errors.RestErr)
 	Get(string) (*items.Item, rest_errors.RestErr)
+	Search(query queries.EsQuery) ([]items.Item, rest_errors.RestErr)
 }
 
 type itemsService struct{}
@@ -32,4 +34,9 @@ func (s *itemsService) Get(itemId string) (*items.Item, rest_errors.RestErr) {
 	}
 
 	return &item, nil
+}
+
+func (s *itemsService) Search(query queries.EsQuery) ([]items.Item, rest_errors.RestErr) {
+	dao := items.Item{}
+	return dao.Search(query)
 }
