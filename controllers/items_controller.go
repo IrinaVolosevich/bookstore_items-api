@@ -7,8 +7,10 @@ import (
 	"encoding/json"
 	"github.com/IrinaVolosevich/bookstore_oauth-go/oauth"
 	"github.com/IrinaVolosevich/bookstore_utils-go/rest_errors"
+	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
+	"strings"
 )
 
 var (
@@ -29,7 +31,7 @@ func (c *itemsController) Create(w http.ResponseWriter, r *http.Request) {
 	}
 
 	sellerId := oauth.GetCallerId(r)
-	if  sellerId == 0 {
+	if sellerId == 0 {
 		respErr := rest_errors.NewUnauthorizedError("invalid request body")
 		http_utils.RespondError(w, respErr)
 		return
@@ -63,5 +65,14 @@ func (c *itemsController) Create(w http.ResponseWriter, r *http.Request) {
 }
 
 func (c *itemsController) Get(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	itemId := strings.TrimSpace(vars["id"])
 
+	item, err := services.ItemsService.Get(itemId)
+	if err != nil {
+		http_utils.RespondError(w, err)
+		return
+	}
+
+	http_utils.RespondJson(w, http.StatusOK, item)
 }
