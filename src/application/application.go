@@ -1,7 +1,7 @@
 package application
 
 import (
-	"bookstore_items-api/clients/elasticsearch"
+	"bookstore_items-api/src/clients/elasticsearch"
 	"github.com/gorilla/mux"
 	"net/http"
 	"time"

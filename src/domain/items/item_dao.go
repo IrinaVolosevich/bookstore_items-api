@@ -1,8 +1,8 @@
 package items
 
 import (
-	"bookstore_items-api/clients/elasticsearch"
-	"bookstore_items-api/domain/queries"
+	"bookstore_items-api/src/clients/elasticsearch"
+	"bookstore_items-api/src/domain/queries"
 	"encoding/json"
 	"errors"
 	"fmt"

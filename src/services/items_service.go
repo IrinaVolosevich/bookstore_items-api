@@ -1,8 +1,8 @@
 package services
 
 import (
-	"bookstore_items-api/domain/items"
-	"bookstore_items-api/domain/queries"
+	"bookstore_items-api/src/domain/items"
+	"bookstore_items-api/src/domain/queries"
 	"github.com/IrinaVolosevich/bookstore_utils-go/rest_errors"
 )
 

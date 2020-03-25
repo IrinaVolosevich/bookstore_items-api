@@ -1,10 +1,10 @@
 package controllers
 
 import (
-	"bookstore_items-api/domain/items"
-	"bookstore_items-api/domain/queries"
-	"bookstore_items-api/services"
-	"bookstore_items-api/utils/http_utils"
+	"bookstore_items-api/src/domain/items"
+	"bookstore_items-api/src/domain/queries"
+	"bookstore_items-api/src/services"
+	"bookstore_items-api/src/utils/http_utils"
 	"encoding/json"
 	"github.com/IrinaVolosevich/bookstore_oauth-go/oauth"
 	"github.com/IrinaVolosevich/bookstore_utils-go/rest_errors"

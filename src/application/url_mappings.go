@@ -1,7 +1,7 @@
 package application
 
 import (
-	"bookstore_items-api/controllers"
+	"bookstore_items-api/src/controllers"
 	"net/http"
 )
 
